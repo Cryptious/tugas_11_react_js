@@ -12,7 +12,8 @@ Divider,
 Header,
 Icon,
 Input,
-Image
+Image,
+Search
 } from "semantic-ui-react";
 
 class App extends Component {
@@ -22,21 +23,23 @@ class App extends Component {
       <br />
 
         <Segment placeholder>
-          <Grid columns={2} relaxed='very' stackable>
-            <Grid.Column textAlign="center">
+          <Grid columns={2} relaxed='very' stackable textAlign='center'>
+          <Grid.Row verticalAlign='middle'>
+            <Grid.Column>
               <Header as='h2' icon>
                 <Icon name='search' />
                 Cari Document
               </Header>
-              <p><Input  icon='search' placeholder='Search...' circular /></p>
+              <p><Search placeholder='Cari Dokument' /></p>
             </Grid.Column>
-            <Grid.Column verticalAlign='middle' textAlign="center">
+            <Grid.Column>
               <Header as='h2' icon>
                 <Icon name='file pdf outline' />
                 Tambah Document Baru
               </Header>
               <Button primary content='Sign up' icon='signup'>Create Document</Button>
             </Grid.Column>
+            </Grid.Row>
           </Grid>
           <Divider vertical>Or</Divider>
         </Segment>
