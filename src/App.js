@@ -1,26 +1,110 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import "semantic-ui-css/semantic.min.css";
+import {
+Grid,
+List,
+Loader,
+Dimmer,
+Placeholder,
+Segment,
+Button,
+Divider,
+Header,
+Icon,
+Input,
+Image
+} from "semantic-ui-react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render(){
+    return(
+      <div>
+      <br />
+
+        <Segment placeholder>
+          <Grid columns={2} relaxed='very' stackable>
+            <Grid.Column textAlign="center">
+              <Header as='h2' icon>
+                <Icon name='search' />
+                Cari Document
+              </Header>
+              <p><Input  icon='search' placeholder='Search...' circular /></p>
+            </Grid.Column>
+            <Grid.Column verticalAlign='middle' textAlign="center">
+              <Header as='h2' icon>
+                <Icon name='file pdf outline' />
+                Tambah Document Baru
+              </Header>
+              <Button primary content='Sign up' icon='signup'>Create Document</Button>
+            </Grid.Column>
+          </Grid>
+          <Divider vertical>Or</Divider>
+        </Segment>
+        <br />
+        <Segment>
+          <Dimmer active>
+            <Loader />
+          </Dimmer>
+          <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+        </Segment>
+
+        <br />
+
+        <Grid>
+          <Grid.Column width={5}>
+          <Segment raised>
+            <Placeholder>
+              <Placeholder.Header image>
+              <Placeholder.Line />
+              <Placeholder.Line />
+              </Placeholder.Header>
+              <Placeholder.Paragraph>
+              <Placeholder.Line />
+              <Placeholder.Line />
+              <Placeholder.Line />
+              <Placeholder.Line />
+              </Placeholder.Paragraph>
+            </Placeholder>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column width={7}>
+          <Segment raised>
+            <Placeholder>
+              <Placeholder.Header image>
+              <Placeholder.Line />
+              <Placeholder.Line />
+              </Placeholder.Header>
+              <Placeholder.Paragraph>
+              <Placeholder.Line />
+              <Placeholder.Line />
+              <Placeholder.Line />
+              <Placeholder.Line />
+              </Placeholder.Paragraph>
+            </Placeholder>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column width={4}>
+          <List>
+              <Header as='h3'>Website Terkait</Header>
+             <List.Item icon='linkify' content={<a href='#'>Google</a>} />
+             <List.Item icon='linkify' content={<a href='#'>facebook</a>} />
+             <List.Item icon='linkify' content={<a href='#'>semantic ui</a>} />
+             <List.Item icon='linkify' content={<a href='#'>Niomic</a>} />
+             <List.Item icon='linkify' content={<a href='#'>react</a>} />
+           </List>
+          </Grid.Column>
+        </Grid>
+
+        <Segment.Group>
+          <Segment.Group horizontal>
+
+
+
+          </Segment.Group>
+        </Segment.Group>
+
+      </div>
+    )
+  }
 }
-
 export default App;
